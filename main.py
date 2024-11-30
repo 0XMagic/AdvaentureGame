@@ -20,7 +20,7 @@ class Question:
 		return "ERROR"
 
 
-def main():
+def game():
 	char_name = Question("[Character creation]", "What is your name?").ask().capitalize()
 	town = Question("", "What town do you live in?").ask().capitalize()
 	favorite_song = Question("", "What id your favorite song?").ask().capitalize()
@@ -49,7 +49,11 @@ def main():
 
 	print(f"{char_name} agrees to help Jim with their car.\nIt took longer than expected to fix, but the car now starts!\nBecause of this however, {char_name} was late to work *again* and got a talking-to from their boss.")
 
-
+def main():
+	keep_playing = "y"
+	while keep_playing == "y":
+		game()
+		keep_playing = Question("", "Play again?", ("y", "n")).ask()
 
 
 if __name__ == '__main__':
